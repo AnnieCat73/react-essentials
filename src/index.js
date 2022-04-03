@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
- React.createElement("h1", {style: {color: "blue"}}, "Heyyy Everyone!!"),
+ <App />,
   document.getElementById('root')
 );
 
