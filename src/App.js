@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import kitchenTools from './kitchenTools.png'
 
 function Header(props) {
   return (
@@ -13,9 +14,12 @@ function Main (props) {
   return (
     <section>
       <p>We serve the most {props.adjective} food around.</p>
+      <img src={kitchenTools} alt="Utensils" height={100}/>
+      <img src={"https://github.com/AnnieCat73.png"} alt="Annie Indreiten" height={150}/>
       <ul style={{textAlign: "left", listStyleType: "none"}}>
         {props.dishes.map((dish) => <li key={dish.index}>{dish.title}</li>)}
       </ul>
+      
     </section>
   )
 }
