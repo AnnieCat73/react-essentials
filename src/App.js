@@ -13,6 +13,9 @@ function Main (props) {
   return (
     <section>
       <p>We serve the most {props.adjective} food around.</p>
+      <ul style={{textAlign: "left", listStyleType: "none"}}>
+        {props.dishes.map((dish) => <li key={dish.index}>{dish.title}</li>)}
+      </ul>
     </section>
   )
 }
@@ -25,11 +28,15 @@ function Footer (props) {
   )
 }
 
+const dishes = ["Mac and Chesse", "Salmon", "Tofu and Vegetables"];
+
+const dishObjects = dishes.map((dish, index) => ({id: index, title: dish}))
+
 function App() {
   return (
     <div className="App">
       <Header name="Annie"/>
-      <Main adjective="amazing" />
+      <Main adjective="amazing" dishes={dishObjects}/>
       <Footer year={new Date().getFullYear()}/>
     </div>
   );
