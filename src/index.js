@@ -9,7 +9,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
  
-  <App authorized={true}/>,
+  <App />,
   document.getElementById('root')
 );
 
