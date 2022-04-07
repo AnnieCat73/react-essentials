@@ -15,7 +15,7 @@ function App () {
 
   useEffect(() => {
     console.log(`It's a ${secondary} around here!`);
-  }, [secondary]);
+  }, [secondary]);//this one only logs secondary
 
   return (
     <>
