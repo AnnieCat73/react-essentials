@@ -6,6 +6,7 @@ import './App.css';
 
 //NB login is passed as prop login="AnnieCat73"
 //in index.js
+//Json stringigy just returns all the data/not great looking
 
 function App ({ login}) {
   const [data, setData] = useState(null);
