@@ -4,6 +4,9 @@ import './App.css';
 //https://api.github.com/users/AnnieCat73
 //null as we won't have any data initially
 
+//NB login is passed as prop login="AnnieCat73"
+//in index.js
+
 function App ({ login}) {
   const [data, setData] = useState(null);
   
