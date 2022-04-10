@@ -9,7 +9,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
  
-  <App login="AnnieCat73" />,
+  <App />,
   document.getElementById('root')
 );
 
