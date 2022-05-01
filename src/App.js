@@ -5,6 +5,7 @@ import Practice from './MyFolder/Practice';
 import Timeapp from './todos/Timeapp';
 import Heading from './todos/Heading';
 import List from './todos/List';
+import CurrentGreeting from './todos/CurrentGreeting';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <div className="App">
       <Heading />
       <List />
+      <CurrentGreeting />
       <TodoList />
       <Practice authorized={true} />
       <Timeapp />
