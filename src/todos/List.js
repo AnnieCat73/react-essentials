@@ -1,5 +1,6 @@
 import React from 'react'
 import pi, { doublePi, triplePi } from './math';
+import { add, multiply, subtract, divide } from './calculator.js'
 
 function List() {
   return (
@@ -13,6 +14,12 @@ function List() {
         <li>{pi}</li>
         <li>{doublePi()}</li>{/*must have ()  as function*/}
         <li>{triplePi()}</li>
+      </ul>
+      <ul>
+        <li>{add(1, 2)}</li>
+        <li>{multiply(2, 3)}</li>
+        <li>{subtract(7, 2)}</li>
+        <li>{divide(5, 2)}</li>
       </ul>
     </>
 
