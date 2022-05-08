@@ -1,6 +1,7 @@
 import React from 'react';
 import emojipedia from './emojipedia';
 import Entry from './Entry';
+import Arrays from './Arrays';
 
 //import './App.css';
 //import TodoList from './todos/TodoList';
@@ -43,6 +44,8 @@ function App() {
       <dl className="dictionary">
         {emojipedia.map(createEntry)}
       </dl>
+
+      <Arrays />
 
     </div>
   );
