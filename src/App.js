@@ -16,7 +16,7 @@ import Arrays from './Arrays';
 //3) Map through emojipeida array and render components
 
 
-function createEntry(emojiEntry) {
+/*function createEntry(emojiEntry) {
   return <Entry
     key={emojiEntry.id}
     emoji={emojiEntry.emoji}
@@ -24,7 +24,7 @@ function createEntry(emojiEntry) {
     description={emojiEntry.meaning}
   />
 
-}
+}*/
 
 function App() {
 
@@ -42,7 +42,15 @@ function App() {
       </h1>
 
       <dl className="dictionary">
-        {emojipedia.map(createEntry)}
+        {/*}{emojipedia.map(createEntry)}*/}
+        {emojipedia.map(emojiEntry => (
+          <Entry
+            key={emojiEntry.id}
+            emoji={emojiEntry.emoji}
+            name={emojiEntry.name}
+            description={emojiEntry.meaning}
+          />
+        ))}
       </dl>
 
       <Arrays />
