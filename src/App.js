@@ -38,6 +38,8 @@ function App() {
   function unStrike() {
     button.style.textDecoration = null;
   }*/
+
+  const [count, setCount] = useState(0);
   return (
     <div className='App'>
       <p style={isDone ? strikeThrough : null}>Buy Milk</p>
@@ -46,7 +48,10 @@ function App() {
       the imperative Javascript way but cumbersome:
       <button onClick={strike}>Change to strike through</button>
       <button onClick={unStrike}>Change to unstrike through</button>*/}
-      <p>Buy Milk</p>
+
+      {/*Better way ex; how to update h2 when push increment button*/}
+      <h2>{count}</h2>
+      <button onClick={() => setCount(count + 1)}>+</button>
 
       {/*<Heading />
       <List />
