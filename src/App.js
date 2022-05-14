@@ -39,19 +39,25 @@ function App() {
     button.style.textDecoration = null;
   }*/
 
+
   const [count, setCount] = useState(0);
+
+  function decrease() {
+    setCount(count - 1);
+  }
   return (
     <div className='App'>
-      <p style={isDone ? strikeThrough : null}>Buy Milk</p>
-      {/*}2)but the above depends on what we set isDone to in the
-      programme, but what if user want to click on it: do this
-      the imperative Javascript way but cumbersome:
-      <button onClick={strike}>Change to strike through</button>
-      <button onClick={unStrike}>Change to unstrike through</button>*/}
+      <div className="container">
+        <h1>TIME</h1>
+        <button>Get Time</button>
+      </div>
 
-      {/*Better way ex; how to update h2 when push increment button*/}
+
+      <p style={isDone ? strikeThrough : null}>Buy Milk</p>
+
       <h2>{count}</h2>
       <button onClick={() => setCount(count + 1)}>+</button>
+      <button onClick={decrease}>-</button>
 
       {/*<Heading />
       <List />
