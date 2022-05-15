@@ -27,7 +27,12 @@ import { useState } from 'react'
 
 }*/
 
+
+//console.log(now);
+
 function App() {
+  let now = new Date().toLocaleTimeString();
+  setInterval(3000, updateTime);
   let isDone = true;
 
   const strikeThrough = { textDecoration: "line-through" }
@@ -39,6 +44,14 @@ function App() {
     button.style.textDecoration = null;
   }*/
 
+  const [time, setTime] = useState(now)
+
+  function updateTime() {
+    const newTime = new Date().toLocaleTimeString();
+    setTime(newTime);
+
+  }
+
 
   const [count, setCount] = useState(0);
 
@@ -48,8 +61,8 @@ function App() {
   return (
     <div className='App'>
       <div className="container">
-        <h1>TIME</h1>
-        <button>Get Time</button>
+        <h1>{time}</h1>
+        <button onClick={updateTime}>Get Time</button>
       </div>
 
 
