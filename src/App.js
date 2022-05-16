@@ -3,32 +3,13 @@ import emojipedia from './emojipedia';
 import Entry from './Entry';
 import Arrays from './Arrays';
 import { useState } from 'react'
-
-//import './App.css';
-//import TodoList from './todos/TodoList';
-//import Practice from './MyFolder/Practice';
-//import Timeapp from './todos/Timeapp';
-//import Heading from './todos/Heading';
-//import List from './todos/List';
-//import CurrentGreeting from './todos/CurrentGreeting';
-
-//1)Create entry component
-//2) Create props to replace the hard coded data
-//3) Map through emojipeida array and render components
+import practice from './practice'
+import table from './table';
 
 
-/*function createEntry(emojiEntry) {
-  return <Entry
-    key={emojiEntry.id}
-    emoji={emojiEntry.emoji}
-    name={emojiEntry.name}
-    description={emojiEntry.meaning}
-  />
-
-}*/
 
 
-//console.log(now);
+
 
 function App() {
   let now = new Date().toLocaleTimeString();
@@ -36,13 +17,7 @@ function App() {
   let isDone = true;
 
   const strikeThrough = { textDecoration: "line-through" }
-  /*const button = document.querySelector("button");
-  function strike() {
-    button.style.textDecoration = "line-through";
-  }
-  function unStrike() {
-    button.style.textDecoration = null;
-  }*/
+
 
   const [time, setTime] = useState(now)
 
@@ -59,6 +34,8 @@ function App() {
     setCount(count - 1);
   }
   return (
+
+
     <div className='App'>
       <div className="container">
         <h1>{time}</h1>
