@@ -3,7 +3,7 @@ import emojipedia from './emojipedia';
 import Entry from './Entry';
 import Arrays from './Arrays';
 import { useState } from 'react'
-import practice from './practice'
+import cars from './practice'
 import table from './table';
 
 
@@ -12,6 +12,8 @@ import table from './table';
 
 
 function App() {
+
+
   let now = new Date().toLocaleTimeString();
   setInterval(3000, updateTime);
   let isDone = true;
@@ -35,8 +37,10 @@ function App() {
   }
   return (
 
+    <div className='App' >
+      <table />
 
-    <div className='App'>
+
       <div className="container">
         <h1>{time}</h1>
         <button onClick={updateTime}>Get Time</button>
