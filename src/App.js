@@ -168,6 +168,13 @@ function App() {
   return (
 
     <div>
+      <section>
+        <div className="container">
+          <h1>Hello </h1>
+          <input type="text" placeholder="What's your name?" />
+          <button>Submit</button>
+        </div>
+      </section>
       <header>
         <h1>Trips API</h1>
       </header>
