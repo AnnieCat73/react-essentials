@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react'
 //import emojipedia from './emojipedia';
 //import Entry from './Entry';
 //import Arrays from './Arrays';
@@ -27,7 +28,7 @@ function App() {
   const [count, setCount] = useState(0);
   function decrease() {
     setCount(count - 1);
-  }
+  }*/
   const [headingText, setHeadingText] = useState("Hello");
   const [isMousedOver, setMouseOver] = useState(false);
   function handleClick() {
@@ -38,7 +39,7 @@ function App() {
   }
   function handleMouseOut() {
     setMouseOver(false);
-  }*/
+  }
   const endpoints = [
     {
       name: 'GET /trips',
@@ -199,6 +200,18 @@ function App() {
 
         </div>
       </main>
+      <section>
+        <div className="container">
+          <h1>{headingText}</h1>
+          <input type="text" placeholder="What's your name?" />
+          <button style={{ backgroundColor: isMousedOver ? "black" : "white" }}
+            onClick={handleClick}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+
+          >Submit</button>
+        </div>
+      </section>
 
     </div>
 
@@ -209,19 +222,10 @@ function App() {
 
 
 
+
+
+
     /*}<div className='App' >
-      <div className="container">
-        <h1>{headingText}</h1>
-        <input type="text" placeholder="What's your name?" />
-        <button style={{ backgroundColor: isMousedOver ? "black" : "white" }}
-          onClick={handleClick}
-          onMouseOver={handleMouseOver}
-          onMouseOut={handleMouseOut}
-
-        >Submit</button>
-      </div>
-
-
       <div className="container">
         <h1>{time}</h1>
         <button onClick={updateTime}>Get Time</button>
