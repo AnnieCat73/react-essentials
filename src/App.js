@@ -163,16 +163,34 @@ function App() {
     },
   ]
 
+  const [name, setName] = useState("");
+  const [headingTexter, setHeadingTexter] = useState("");
 
+  function handleChange(e) {
+    //console.log(e.target.value);//f.x dddr
+    //console.log(e.target.placeholder);//What's your name?
+    //console.log(e.target.type);//text
+    setName(e.target.value)
+  }
+
+  function handleClicker(e) {
+    setHeadingTexter(name);
+    e.preventDefault();
+  }
 
   return (
 
     <div>
       <section>
         <div className="container">
-          <h1>Hello </h1>
-          <input type="text" placeholder="What's your name?" />
-          <button>Submit</button>
+          <h1>Hello {headingTexter}</h1>
+          <input
+            onChange={handleChange}
+            type="text"
+            placeholder="What's your name?"
+            value={name}
+          />
+          <button onClick={handleClicker}>Submit</button>
         </div>
       </section>
       <header>
