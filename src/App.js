@@ -203,7 +203,7 @@ function App() {
       }
     })
   }
-
+  //Complex React practice with prev value
   const [contact, setContact] = useState({
     fName: "",
     lName: "",
