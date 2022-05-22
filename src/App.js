@@ -211,31 +211,14 @@ function App() {
   });
 
   function handleChange(event) {
-    const { name, value } = event.target;//destructured so same as:
-    //const newValue = event.target.value;
-    //const inputName = event.target.name;
+    const { name, value } = event.target;
+    //with spread operator
     setContact((prevValue) => {
-      //console.log(prevValue)
-      if (name === "fName") {
-        return {
-          fName: value,
-          lName: prevValue.lName,
-          email: prevValue.email
-        }
-      } else if (name === "lName") {
-        return {
-          fName: prevValue.fName,
-          lName: value,
-          email: prevValue.email
-        }
-      } else if (name === "email") {
-        return {
-          fName: prevValue.fName,
-          lName: prevValue.lName,
-          email: value
-        }
-      }
-    })
+      return {
+        ...prevValue,
+        [name]: value //[]so it doesn't interpret as string/from an array
+      };
+    });
   }
 
   return (
@@ -343,25 +326,25 @@ function App() {
         <h1>{time}</h1>
         <button onClick={updateTime}>Get Time</button>
       </div>
-
-
+  
+  
       <p style={isDone ? strikeThrough : null}>Buy Milk</p>
-
+  
       <h2>{count}</h2>
       <button onClick={() => setCount(count + 1)}>+</button>
       <button onClick={decrease}>-</button>
-
+  
       {/*<Heading />
       <List />
       <CurrentGreeting />
       <TodoList />
       <Practice authorized={true} />
       <Timeapp />
-
+  
     < h1 >
     <span>emojipedia</span>
       </ >
-
+  
       <dl className="dictionary">
         {/*}{emojipedia.map(createEntry)}}
         {
@@ -375,9 +358,9 @@ function App() {
     ))
     }
      
-
+  
     <Arrays />
-
+  
     </div >*/
   );
 }
