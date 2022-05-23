@@ -210,7 +210,7 @@ function App() {
     email: ""
   });
 
-  function handleChange(event) {
+  function handleChange2(event) {
     const { name, value } = event.target;
     //with spread operator
     setContact((prevValue) => {
@@ -221,9 +221,51 @@ function App() {
     });
   }
 
+  //TODO LIST
+
+  const [inputText, setInputText] = useState("");
+  const [items, setItems] = useState([]);//2)going to hold an array of items, so inside ul
+
+  function handleChange(e) {
+    const newValue = e.target.value;//1)create a variable to grab hold of value entered
+    setInputText(newValue);
+  }
+
+  function addItem() {//get hold of prev item so can add new after it/at end of array...
+    setItems((prevItems) => {
+      return [...prevItems, inputText];//new array to add prev items and then add new item
+    });
+    setInputText("");//so after added item with button the field is clear
+  }
+
   return (
 
     <div>
+      <section className="main-list">
+        <div className="list-container">
+          <div className="heading-list">
+            <h1>To-Do List</h1>
+          </div>
+          <div className="form-list">
+            <input
+              onChange={handleChange}
+              type="text"
+              value={inputText}
+            />
+            <button
+              onClick={addItem}
+              className="list-button">
+              <span>Add</span>
+            </button>
+          </div>
+          <div>
+            <ul>
+              {items.map(item => <li className="list-item">{item}</li>)
+              }
+            </ul>
+          </div>
+        </div>
+      </section>
       <section>
         <div className="container">
           <h1>
