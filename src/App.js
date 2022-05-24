@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react'
+import ToDoItem from './components.jsx/ToDoItem';
 //import emojipedia from './emojipedia';
 //import Entry from './Entry';
 //import Arrays from './Arrays';
@@ -233,7 +234,7 @@ function App() {
 
   function addItem() {//get hold of prev item so can add new after it/at end of array...
     setItems((prevItems) => {
-      return [...prevItems, inputText];//new array to add prev items and then add new item
+      return [...prevItems, inputText];//new arrfceray to add prev items and then add new item
     });
     setInputText("");//so after added item with button the field is clear
   }
@@ -260,8 +261,11 @@ function App() {
           </div>
           <div>
             <ul>
-              {items.map(item => <li className="list-item">{item}</li>)
-              }
+              {items.map(todoItem => (
+                <ToDoItem
+                  text={todoItem} />
+              ))}
+
             </ul>
           </div>
         </div>
