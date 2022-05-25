@@ -239,6 +239,16 @@ function App() {
     setInputText("");//so after added item with button the field is clear
   }
 
+  function deleteItem(id) {
+    setItems((prevItems) => {
+      return prevItems.filter(
+        (item, index) => {
+          return index !== id
+        }
+      )
+    });
+  }
+
   return (
 
     <div>
@@ -261,9 +271,12 @@ function App() {
           </div>
           <div>
             <ul>
-              {items.map(todoItem => (
+              {items.map((todoItem, index) => (
                 <ToDoItem
-                  text={todoItem} />
+                  key={index}
+                  id={index}
+                  text={todoItem}
+                  onChecked={deleteItem} />
               ))}
 
             </ul>
