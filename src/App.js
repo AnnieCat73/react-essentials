@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState } from 'react'
 import ToDoItem from './components.jsx/ToDoItem';
+import InputArea from './components.jsx/InputArea';
+import Parent from './components.jsx/Parent';
 //import emojipedia from './emojipedia';
 //import Entry from './Entry';
 //import Arrays from './Arrays';
@@ -224,19 +226,19 @@ function App() {
 
   //TODO LIST
 
-  const [inputText, setInputText] = useState("");
+  //const [inputText, setInputText] = useState("");
   const [items, setItems] = useState([]);//2)going to hold an array of items, so inside ul
 
-  function handleChange(e) {
+  /*function handleChange(e) {
     const newValue = e.target.value;//1)create a variable to grab hold of value entered
     setInputText(newValue);
-  }
+  }*/
 
-  function addItem() {//get hold of prev item so can add new after it/at end of array...
+  function addItem(inputText) {//get hold of prev item so can add new after it/at end of array...
     setItems((prevItems) => {
       return [...prevItems, inputText];//new arrfceray to add prev items and then add new item
     });
-    setInputText("");//so after added item with button the field is clear
+    //setInputText("");//so after added item with button the field is clear
   }
 
   function deleteItem(id) {
@@ -257,18 +259,7 @@ function App() {
           <div className="heading-list">
             <h1>To-Do List</h1>
           </div>
-          <div className="form-list">
-            <input
-              onChange={handleChange}
-              type="text"
-              value={inputText}
-            />
-            <button
-              onClick={addItem}
-              className="list-button">
-              <span>Add</span>
-            </button>
-          </div>
+          <InputArea onAdd={addItem} />
           <div>
             <ul>
               {items.map((todoItem, index) => (
@@ -322,6 +313,7 @@ function App() {
           <button onClick={handleClicker}>Submit</button>
         </div>
       </section>
+      <Parent />
       <header>
         <h1>Trips API</h1>
       </header>
